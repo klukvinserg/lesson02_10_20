@@ -1,0 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../assets/Open_Sans/OpenSans-ExtraBoldItalic.ttf')
+}
+
+body {
+    font-family: 'OpenSans';
+}

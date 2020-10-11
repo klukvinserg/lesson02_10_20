@@ -1,0 +1,16 @@
+@import 'main';
+
+.block {
+  color: red;
+  width: 600px;
+  height: 100px;
+  background-color: green;
+}
+
+.picture {
+    background: url('../assets/picture.jpg');
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
