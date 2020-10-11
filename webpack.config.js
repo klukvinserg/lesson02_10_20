@@ -3,7 +3,7 @@ let path = require("path");
 let HTMLWebpackPlagin = require("html-webpack-plugin");
 let { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-let CopyWebpackPligin = require('copy-webpack-plugin')
+let CopyWebpackPligin = require("copy-webpack-plugin");
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -18,34 +18,31 @@ module.exports = {
   },
 
   resolve: {
-      extensions: ['.js', '.json', '.jpg', '.css', '.svg']
+    extensions: [".js", ".json", ".jpg", ".css", ".svg"],
   },
 
   plugins: [
-    // new HTMLWebpackPlagin({
-    //   template: "./index.html",
-    // }),
-    ////   
     new HTMLWebpackPlagin({
-      filename: 'index.html',
-      template: './index.html',
-      // chunks: ['main']
+      filename: "index.html",
+      template: "./index.html",
     }),
     new HTMLWebpackPlagin({
-      filename: 'about.html',
-      template: './about.html',
-      // chunks: ['about']
+      filename: "about.html",
+      template: "./about.html",
     }),
-    /////
+    new HTMLWebpackPlagin({
+      filename: "contact.html",
+      template: "./contact.html",
+    }),
     new CleanWebpackPlugin(),
     new CopyWebpackPligin({
-        patterns: [
-            {
-                from: path.resolve(__dirname, 'src/icon.svg'),
-                to: path.resolve(__dirname, 'dist')
-            }
-        ]
-    })
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/icon.svg"),
+          to: path.resolve(__dirname, "dist"),
+        },
+      ],
+    }),
   ],
   module: {
     rules: [
@@ -72,11 +69,11 @@ module.exports = {
     ],
   },
   devServer: {
-      port: 4200
+    port: 4200,
   },
   optimization: {
-      splitChunks: {
-          chunks: 'all'
-      }
-  }
+    splitChunks: {
+      chunks: "all",
+    },
+  },
 };
